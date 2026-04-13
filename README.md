@@ -17,13 +17,15 @@ Also supports macOS Intel, Linux (Ubuntu/Debian), and Windows.
 - Auto-refresh every 2 minutes (configurable)
 - Status bar indicator for quick glance
 
-### 🔄 Auto Retry (New in v1.2)
+### 🔄 Auto Retry (New in v1.2, improved in v1.2.2)
 
 - Automatically clicks **"Retry"** when the AI agent encounters errors
 - No more babysitting — zero-click automation
+- **Smart target polling** — waits for IDE to be ready instead of failing immediately
 - Toggle on/off from the sidebar
 - Uses Chrome DevTools Protocol (CDP) for reliable DOM injection
 - Works with `MutationObserver` for near-instant detection (~500ms)
+- Auto-reconnects if connection is lost
 
 ### 🚀 One-Click Debug Mode
 
@@ -111,6 +113,25 @@ The extension activates automatically. Click the **🚀 AGQ** icon in the sideba
 
 1. **Quota**: Finds the Antigravity language server process → calls its gRPC API → parses quota data
 2. **Auto Retry**: Connects to IDE via Chrome DevTools Protocol → injects a DOM observer script → auto-clicks Retry buttons
+
+---
+
+## 📝 Changelog
+
+### v1.2.2
+- **Fixed:** "Inject failed. 0 targets []" error when enabling Auto Retry before IDE targets are ready
+- Auto Retry now polls for targets (every 5s, up to 5 minutes) instead of failing immediately
+- Auto-reconnects when all connections are lost
+- Removed dead code in reconnect monitor
+
+### v1.2.1
+- Initial Auto Retry with Debug Mode support
+- One-click restart with debug mode
+
+### v1.0.0
+- Real-time quota monitoring
+- Status bar indicator
+- Auto-refresh
 
 ---
 
