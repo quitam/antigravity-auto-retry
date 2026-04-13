@@ -138,6 +138,9 @@ The extension activates automatically. Click the **🚀 AGQ** icon in the sideba
 
 ## 📝 Changelog
 
+### v1.2.4
+- **Fixed:** Sửa một số lỗi không tương thích trên Windows
+
 ### v1.2.3
 - **Fixed:** Opening new agent tabs no longer causes old tabs to steal focus
 - **Architecture:** Fire-and-forget CDP injection — no more persistent WebSocket connections
